@@ -46,7 +46,7 @@ const ResumeSection = () => {
               Download Resume
             </a>
 
-            <a
+            {/* <a
               href="#"
               target="_blank"
               rel="noopener noreferrer"
@@ -54,7 +54,7 @@ const ResumeSection = () => {
             >
               <ExternalLink size={20} className="mr-2" />
               View Online
-            </a>
+            </a> */}
           </div>
         </div>
       </div>

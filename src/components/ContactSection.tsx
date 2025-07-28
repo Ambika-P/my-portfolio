@@ -47,7 +47,7 @@ const ContactSection = () => {
   };
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+    // e.preventDefault();
     setIsSubmitting(true);
 
     setTimeout(() => {
@@ -75,7 +75,10 @@ const ContactSection = () => {
           <div className="lg:w-1/2 bg-white dark:bg-[#1a1a1a] rounded-xl shadow-lg p-8">
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Send Me a Message</h3>
 
-            <form ref={formRef} onSubmit={handleSubmit}>
+            <form ref={formRef} onSubmit={handleSubmit}
+              action="https://formsubmit.co/ambikapudkaje7@gmail.com"
+              method="POST"
+              className="space-y-4">
               <div className="mb-6">
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                   Name
@@ -119,7 +122,7 @@ const ContactSection = () => {
                   onChange={handleChange}
                   rows={5}
                   className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-400 focus:border-transparent outline-none transition-all bg-white dark:bg-[#2a2a2a] text-gray-900 dark:text-white"
-                  placeholder="How can I help you?"
+                  placeholder="Please describe here!"
                   required
                 ></textarea>
               </div>

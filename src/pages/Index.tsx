@@ -10,6 +10,7 @@ import ResumeSection from '../components/ResumeSection';
 import GallerySection from '../components/GallerySection';
 import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
+import LanguagesSection from '@/components/LanguagesSection';
 
 const Index = () => {
   // Initialize intersection observer for scroll animations
@@ -40,11 +41,12 @@ const Index = () => {
       <Navbar />
       <HeroSection />
       <AboutSection />
+      <GallerySection />
       <ProjectsSection />
       <SkillsSection />
+      <LanguagesSection />
       <ExperienceSection />
       <ResumeSection />
-      <GallerySection />
       <ContactSection />
       <Footer />
     </div>

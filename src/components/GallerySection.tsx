@@ -7,8 +7,24 @@ const GallerySection = () => {
 
   // ✅ Local images from /public/images
   const galleryImages = [
+
+    {
+      url: '/images/chart3.png',
+      title: 'EasyTime System',
+      description: 'Employee timesheet & productivity tracking tool'
+    },
     {
       url: '/images/LLM-dash.png',
+      title: 'Learning Labs LMS',
+      description: 'Role-based LMS with AI features like MCQ generation and recommendation'
+    },
+    {
+      url: '/images/chart4.png',
+      title: 'Learning Labs LMS',
+      description: 'Role-based LMS with AI features like MCQ generation and recommendation'
+    },
+    {
+      url: '/images/chart5.png',
       title: 'Learning Labs LMS',
       description: 'Role-based LMS with AI features like MCQ generation and recommendation'
     },
@@ -23,7 +39,7 @@ const GallerySection = () => {
       description: 'Dynamic repair & maintenance system for tracking and reports'
     },
     {
-      url: '/images/easy.jpg',
+      url: '/images/easy.png',
       title: 'EasyTime System',
       description: 'Employee timesheet & productivity tracking tool'
     },
@@ -41,7 +57,17 @@ const GallerySection = () => {
       url: '/images/bosch2.jpg',
       title: 'Data Charts - Predictive App',
       description: 'Recharts-based fault analytics module with filters'
-    }
+    },
+    {
+      url: '/images/chart1.png',
+      title: '',
+      description: ''
+    },
+    {
+      url: '/images/chart2.png',
+      title: '',
+      description: ''
+    },
   ];
 
   useEffect(() => {
@@ -76,11 +102,13 @@ const GallerySection = () => {
   return (
     <section id="gallery" ref={sectionRef} className="py-20 bg-white dark:bg-gray-900 reveal">
       <div className="container mx-auto px-4 md:px-6">
-        <h2 className="section-title text-center mx-auto text-gray-900 dark:text-white">Designs / Snapshots</h2>
+        <h2 className="section-title text-center mx-auto text-gray-900 dark:text-white">
+          UI Design Highlights
+        </h2>
 
         <div className="mt-12 relative max-w-4xl mx-auto">
           <div className="overflow-hidden rounded-xl shadow-lg">
-            <div className="relative h-60 md:h-96">
+            <div className="relative w-full aspect-[16/9] max-h-[500px] sm:h-96">
               {galleryImages.map((image, index) => (
                 <div
                   key={index}
@@ -89,7 +117,7 @@ const GallerySection = () => {
                   <img
                     src={image.url}
                     alt={image.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover object-center rounded-xl"
                   />
                   <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
                     <h3 className="text-xl font-bold text-white mb-2">{image.title}</h3>
@@ -98,6 +126,7 @@ const GallerySection = () => {
                 </div>
               ))}
             </div>
+
           </div>
 
           <button

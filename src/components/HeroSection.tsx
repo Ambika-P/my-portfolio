@@ -124,10 +124,11 @@ const HeroSection = () => {
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
             >
               <img
-                src="/Profile.jpg"
+                src="/Profile1.jpg"
                 alt="Ambika P Profile"
                 className="w-full h-full object-cover"
               />
+
             </motion.div>
             <motion.div
               className="absolute inset-0 rounded-full border-8 border-purple-100 dark:border-purple-900 opacity-70"

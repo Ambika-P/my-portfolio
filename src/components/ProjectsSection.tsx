@@ -81,7 +81,7 @@ const ProjectCard = ({ project }: { project: ProjectProps }) => (
 const ProjectsSection = () => {
   const scrollContainerRef = useRef<HTMLDivElement | null>(null);
   const scrollIntervalRef = useRef<NodeJS.Timeout | null>(null);
-  const isUserScrollingRef = useRef(false);
+  const isInteractingRef = useRef(false);
   const [scrollDirection, setScrollDirection] = useState<'forward' | 'backward'>('forward');
 
   const animateScroll = (distance: number, duration: number) => {
@@ -110,7 +110,7 @@ const ProjectsSection = () => {
     const startAutoScroll = () => {
       if (window.innerWidth < 768 && scrollContainer) {
         scrollIntervalRef.current = setInterval(() => {
-          if (!isUserScrollingRef.current && scrollContainer) {
+          if (!isInteractingRef.current && scrollContainer) {
             const maxScrollLeft = scrollContainer.scrollWidth - scrollContainer.clientWidth;
             const currentScrollLeft = scrollContainer.scrollLeft;
 
@@ -128,7 +128,7 @@ const ProjectsSection = () => {
               }
             }
           }
-        }, 3000);
+        }, 2500); // scroll every 1 second
       }
     };
 
@@ -138,19 +138,10 @@ const ProjectsSection = () => {
       }
     };
 
-    const handleUserScroll = () => {
-      isUserScrollingRef.current = true;
-      setTimeout(() => {
-        isUserScrollingRef.current = false;
-      }, 2000);
-    };
-
-    scrollContainer?.addEventListener('scroll', handleUserScroll);
     startAutoScroll();
 
     return () => {
       stopAutoScroll();
-      scrollContainer?.removeEventListener('scroll', handleUserScroll);
     };
   }, [scrollDirection]);
 
@@ -167,6 +158,10 @@ const ProjectsSection = () => {
           <div
             key={index}
             className="w-[85%] sm:w-[70%] md:w-auto shrink-0 md:shrink md:h-full snap-start"
+            onMouseEnter={() => (isInteractingRef.current = true)}
+            onMouseLeave={() => (isInteractingRef.current = false)}
+            onClick={() => (isInteractingRef.current = true)}
+            onBlur={() => (isInteractingRef.current = false)}
           >
             <ProjectCard project={project} />
           </div>

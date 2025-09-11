@@ -106,44 +106,68 @@ const ProjectsSection = () => {
 
   useEffect(() => {
     const scrollContainer = scrollContainerRef.current;
+    if (!scrollContainer) return;
+
+    let idleTimeout: NodeJS.Timeout | null = null;
+
+    const stopAutoScroll = () => {
+      if (scrollIntervalRef.current) {
+        clearInterval(scrollIntervalRef.current);
+        scrollIntervalRef.current = null;
+      }
+    };
 
     const startAutoScroll = () => {
-      if (window.innerWidth < 768 && scrollContainer) {
+      if (window.innerWidth < 768 && scrollContainer && !scrollIntervalRef.current) {
         scrollIntervalRef.current = setInterval(() => {
           if (!isInteractingRef.current && scrollContainer) {
             const maxScrollLeft = scrollContainer.scrollWidth - scrollContainer.clientWidth;
             const currentScrollLeft = scrollContainer.scrollLeft;
 
-            if (scrollDirection === 'forward') {
+            if (scrollDirection === "forward") {
               if (currentScrollLeft + 250 >= maxScrollLeft) {
-                setScrollDirection('backward');
+                setScrollDirection("backward");
               } else {
                 animateScroll(250, 600);
               }
             } else {
               if (currentScrollLeft <= 0) {
-                setScrollDirection('forward');
+                setScrollDirection("forward");
               } else {
                 animateScroll(-250, 600);
               }
             }
           }
-        }, 2500); // scroll every 1 second
+        }, 2500); // still scrolls every 2.5 seconds
       }
     };
 
-    const stopAutoScroll = () => {
-      if (scrollIntervalRef.current) {
-        clearInterval(scrollIntervalRef.current);
-      }
+    const handleUserScroll = () => {
+      // Stop auto-scroll immediately when user scrolls
+      stopAutoScroll();
+
+      // Reset idle timeout
+      if (idleTimeout) clearTimeout(idleTimeout);
+
+      // Wait 20 seconds of inactivity, then restart auto-scroll
+      idleTimeout = setTimeout(() => {
+        startAutoScroll();
+      }, 20000);
     };
 
+    // Start auto scroll initially
     startAutoScroll();
+
+    // Attach listener
+    scrollContainer.addEventListener("scroll", handleUserScroll, { passive: true });
 
     return () => {
       stopAutoScroll();
+      if (idleTimeout) clearTimeout(idleTimeout);
+      scrollContainer.removeEventListener("scroll", handleUserScroll);
     };
   }, [scrollDirection]);
+
 
   return (
     <section id="projects" className="py-10 px-4 sm:px-8 md:px-16">

@@ -127,6 +127,26 @@ export default {
 					'0%': { transform: 'rotate(0deg)' },
 					'100%': { transform: 'rotate(360deg)' },
 				},
+				float1: {
+					'0%,100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-20px)' },
+				},
+				float2: {
+					'0%,100%': { transform: 'translateY(0) rotate(0deg)' },
+					'50%': { transform: 'translateY(-25px) rotate(15deg)' },
+				},
+				float3: {
+					'0%,100%': { transform: 'translateY(0) rotate(0deg)' },
+					'50%': { transform: 'translateY(-15px) rotate(-15deg)' },
+				},
+				float4: {
+					'0%,100%': { transform: 'translateY(0) rotate(0deg)' },
+					'50%': { transform: 'translateY(-30px) rotate(30deg)' },
+				},
+				fall: {
+					'0%': { transform: 'translateY(0)' },
+					'100%': { transform: 'translateY(120vh)' }, // fall past bottom
+				},
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
@@ -139,6 +159,11 @@ export default {
 				'pulse-light': 'pulse-light 3s ease-in-out infinite',
 				'glow': 'glow 2s ease-in-out infinite',
 				'spin-slow': 'spin-slow 20s linear infinite',
+				float1: 'float1 5s ease-in-out infinite',
+				float2: 'float2 6s ease-in-out infinite',
+				float3: 'float3 4s ease-in-out infinite',
+				float4: 'float4 7s ease-in-out infinite',
+				fall: 'fall 5s linear forwards',
 			},
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

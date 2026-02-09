@@ -11,7 +11,6 @@ import GallerySection from '../components/GallerySection';
 import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
 import LanguagesSection from '@/components/LanguagesSection';
-import { useNavigate } from 'react-router-dom';
 
 const Index = () => {
   // Initialize intersection observer for scroll animations
@@ -36,19 +35,9 @@ const Index = () => {
       });
     };
   }, []);
-  const navigate = useNavigate();
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
-      <button
-        onClick={() => {
-          navigate("/valentine")
-        }}
-        className="relative z-20 px-6 sm:px-8 py-2 sm:py-3 bg-gradient-to-r from-blue-600 to-cyan-500 text-white text-sm rounded-full
-                               shadow-[0_0_20px_rgba(0,200,255,0.6)] hover:scale-110
-                               hover:shadow-[0_0_35px_rgba(0,200,255,1)] active:scale-95 transition mr-4">
-        YES Subbi💘
-      </button>
       <Navbar />
       <HeroSection />
       <AboutSection />

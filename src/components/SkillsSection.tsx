@@ -85,6 +85,7 @@ const SkillsSection = () => {
 
   const skills: Skill[] = [
     { name: "React.js (Hooks, Router)", icon: <Code2 size={40} />, proficiency: 90 },
+    { name: "Node.js", icon: <Code2 size={40} />, proficiency: 80 },
     { name: "Context API", icon: <Network size={40} />, proficiency: 95 },
     { name: "JavaScript (ES6+)", icon: <CodeXml size={40} />, proficiency: 85 },
     { name: "HTML5", icon: <FileCode2 size={40} />, proficiency: 95 },
@@ -93,7 +94,7 @@ const SkillsSection = () => {
     { name: "Material UI", icon: <Code size={40} />, proficiency: 85 },
     { name: "Bootstrap", icon: <LayoutDashboard size={40} />, proficiency: 80 },
     { name: "RESTful API Integration", icon: <Network size={40} />, proficiency: 90 },
-    { name: "MySQL / PostgreSQL", icon: <Database size={40} />, proficiency: 50 },
+    { name: "MySQL / PostgreSQL", icon: <Database size={40} />, proficiency: 70 },
     { name: "VS Code", icon: <TerminalSquare size={40} />, proficiency: 95 },
     { name: "Git", icon: <GitBranchPlus size={40} />, proficiency: 85 },
     { name: "Postman", icon: <Wrench size={40} />, proficiency: 90 },

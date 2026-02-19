@@ -66,7 +66,7 @@ const HeroSection = () => {
               className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight"
             >
               <span className="inline-block">
-                {`React.js Developer with ${yearsOfExperience} Years of Experience`
+                {`Web Developer with ${yearsOfExperience} Years of Experience`
                   .split(' ')
                   .map((word, index) => (
                     <motion.span

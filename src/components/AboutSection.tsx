@@ -49,7 +49,7 @@ const AboutSection = () => {
           rounded-2xl shadow-xl p-8 md:p-12"
         >
           <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center md:text-left">
-            Frontend Developer with 3 Years of Experience
+            Frontend Developer with 4 Years of Experience
           </h3>
 
           <p className="text-gray-700 dark:text-gray-200 mb-6 leading-relaxed">
@@ -64,11 +64,14 @@ const AboutSection = () => {
             <div>
               <h4 className="text-xl font-semibold text-purple-700 dark:text-purple-400 mb-3">Technical Skills</h4>
               <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
-                <li>React.js / JavaScript</li>
-                <li>Tailwind CSS, Material UI</li>
+                <li>React.js</li>
+                <li>Node.js</li>
+                <li>JavaScript (ES6+)</li>
+                <li>Tailwind CSS</li>
+                <li>Material UI (MUI)</li>
                 <li>REST APIs & Axios</li>
-                <li>Git / GitHub</li>
-                <li>VS Code & Dev Tools</li>
+                <li>Git & GitHub</li>
+                <li>VS Code & Browser DevTools</li>
               </ul>
             </div>
             <div>

@@ -71,18 +71,25 @@ const ExperienceSection = () => {
 
   const experienceItems = [
     {
-      year: "Aug 2022 – Present",
+      year: "December 2025 – Present",
+      title: "Senior Software Engineer",
+      company: "Accord Software & Systems Pvt Ltd",
+      description:
+        "Designing and developing scalable web applications using React.js and Node.js. Building RESTful APIs, integrating databases, and implementing secure authentication and role-based access control. Leading frontend architecture with MUI and Tailwind CSS while collaborating in Agile teams on enterprise solutions including predictive maintenance and Learning Labs LMS.",
+    },
+    {
+      year: "Aug 2022 – November 2025",
       title: "Software Engineer",
       company: "Alten Global Technologies Pvt Ltd",
       description:
-        "Building dynamic, responsive web applications using React.js, REST APIs, and modern frontend libraries like MUI and Tailwind CSS. Collaborated in Agile teams and contributed to key projects including predictive maintenance and Learning Labs LMS.",
+        "Developed dynamic and responsive web applications using React.js and Node.js. Built and consumed REST APIs, handled backend logic, integrated databases, and implemented reusable UI components with MUI and Tailwind CSS. Contributed to production-grade projects in Agile development environments.",
     },
     {
       year: "July 2018 – July 2022",
       title: "B.E in Computer Science & Engineering (CSE)",
       institution: "KVG College of Engineering, Sullia",
       description:
-        "Graduated with a CGPA of 8.66. Focused on software engineering principles, data structures, algorithms, and full-stack development.",
+        "Graduated with a CGPA of 8.66. Strong foundation in data structures, algorithms, software engineering principles, and full-stack development using modern web technologies.",
       isEducation: true,
     },
   ];

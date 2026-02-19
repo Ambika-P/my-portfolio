@@ -8,8 +8,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "./components/ThemeProvider";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-import LoveQuestion from "./valentine/LoveQuestion";
-import LoveSuccess from "./valentine/LoveSuccess";
 
 const queryClient = new QueryClient();
 
@@ -24,8 +22,6 @@ const App = () => (
             <Route path="/" element={<Index />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
-            <Route path="/helloMan" element={<LoveQuestion />} />
-            <Route path="/valentine" element={<LoveSuccess />} />
           </Routes>
         </BrowserRouter>
       </TooltipProvider>
